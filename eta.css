@@ -211,7 +211,7 @@ th{
             position: absolute;
             left: 0;
             top: 0;
-            min-heigh: 100vh;
+            min-height: 100vh;
             z-index: -1;
             opacity: 87%;
             filter: blur(3px);
