@@ -211,8 +211,7 @@ th{
             position: absolute;
             left: 0;
             top: 0;
-            max-heigh: 100vh;
-            width: 800px;
+            min-heigh: 100vh;
             z-index: -1;
             opacity: 87%;
             filter: blur(3px);
