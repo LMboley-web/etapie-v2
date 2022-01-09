@@ -222,6 +222,7 @@ th{
             left: 0;
             top: 120px;
             min-height: 100vh;
+            min-width: 100vw;
             z-index: -1;
             opacity: 87%;
             filter: blur(3px);
