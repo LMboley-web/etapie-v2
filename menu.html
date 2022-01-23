@@ -7,123 +7,292 @@
       <meta name="author" content="Lauren M. Boley"> 
       <meta name="description" content="Eta Pie Pizza Menu">
       <link href="eta.css" rel="stylesheet">
-      <link rel="icon" type="image/ico" href="eta-favicon.ico"/>
-      <title>Eta Pie Custom Order Pizzas | Pizza Menu</title>
+      <link rel="icon" type="image/ico" href="assets/eta-favicon.ico"/>
+      <title>Eta Pie Build Your Own Pizzas | Pizza Menu</title>
    </head>
    <body>
-      <div id="menu-img">
-         <img src="fresh-pizza-dark.png" alt="">
+      <!-- IMPORTANT -->
+      <div id="view-dark"></div>
+
+      <!-- Banner Img -->
+      <div class="menu-banner-img" id="img-blur">
+         <img src="assets/fresh-pizza-dark.png" alt="Fresh Veggie Rich Pizza">
       </div>
+      <!-- Banner Img END -->
+
       <!-- Nav -->
-         <div class="nav-bar" id="main-nav">
-<!--             <div class="nav">
-               <img src="assets/nav-bars.svg" alt="Compressed Moblie Nav Bar Icon">
-            </div> -->
-            <a href="home.html">Home</a>
-            <a href="menu.html">Menu</a>
-            <a href="about.html">About Us</a>
-         </div>
+<div class="main-nav">
+   <div id="left-nav">
+         <a href="home.html">Home</a>
+         <a href="menu.html">Menu</a>
+         <a href="about.html">About Us</a>
+   </div>
+   <div id="right-nav">
+      <button class="order-now-nav">Order Now!</button>
+   </div>
+</div>
       <!-- Nav END -->
 
-      <!-- Menu Title -->
+      <!-- Order PopUp Show On Click -->
+      <div id="order-popup">
+         <h3>Sounds good, right?</h3>
+         <h3>Start your order now!</h3>
+         <div id="popup-close" onclick="closePopup()"><p>x</p></div>
+         <button class="order-now" id="apply">Order Carryout</button>
+         <button class="order-now">Order Delivery</button>
+      </div>
+      <!-- Order PopUp END -->
+
+
+      <!-- Menu Mast Head -->
       <h1 class="menu-mast">Our Pizzas</h1>
       <div class="bar" id="menu-bar"></div>
-      <!-- Menu Title END -->
+      <!-- Menu Mast Head END -->
+
 
       <!-- Menu Nav -->
-         <div id="menu-nav">
+         <div class="menu-nav">
             <div class="nav-item" id="active-item">
-               <a href="menu.html"><img src="cat-pizzas.svg" alt="Pizza Menu Icon"></a>
+               <a href="menu.html"><img src="assets/cat-pizzas.svg" alt="Pizza Menu Icon"></a>
                <p>Pizzas</p>
             </div>
             <div class="nav-item">
-               <a href="menu-salads.html"><img src="cat-salads.svg" alt="Salads Menu Icon"></a>
+               <a href="menu-salads.html"><img src="assets/cat-salads.svg" alt="Salads Menu Icon"></a>
                <p>Salads</p>
             </div>
             <div class="nav-item">
-               <a href="menu-bowls.html"><img src="cat-bowls.svg" alt="Bowls Menu Icon"></a>
+               <a href="menu-bowls.html"><img src="assets/cat-bowls.svg" alt="Bowls Menu Icon"></a>
                <p>Bowls</p>
             </div>
             <div class="nav-item">
-               <a href="menu-drinks.html"><img src="cat-drinks.svg" alt="Drinks Menu Icon"></a>
+               <a href="menu-drinks.html"><img src="assets/cat-drinks.svg" alt="Drinks Menu Icon"></a>
                <p>Drinks</p>
             </div>
             <div class="nav-item">
-               <a href="menu-desserts.html"><img src="cat-desserts.svg" alt="Desserts Menu Icon"></a>
+               <a href="menu-desserts.html"><img src="assets/cat-desserts.svg" alt="Desserts Menu Icon"></a>
                <p>Desserts</p>
             </div>
          </div>
       <!-- Menu Nav END -->
 
 
-      <!-- Pizza Selections -->
-      <!-- custom -->
-<div class="main-container">
-   <h1 id="white-text">Create Your<br>Own Pie</h1>
-   <!-- single selection -->
-   <div class="menu-choice" id="custom-item">
-      <div class="left">
-         <div class="item-img" id="custom">
-            <img id="star" src="cust-star.svg" alt="Custom Pizza Star">
+      <!-- Pizza Menu Items -->
+         <!-- build your own pizza -->
+      <div class="main-container">
+         <h1>Build Your<br>Own Pizza</h1>
+            <div class="menu-choice" id="custom-item" onclick="openPopup()">
+               <div class="left">
+               <div class="item-img" id="custom">
+                  <img id="star" src="assets/cust-star.svg" alt="Custom Item Star Graphic">
+               </div>
+            </div>
+            <div class="right">
+               <h3>Custom Pizza</h3>
+               <p>Choose your own crust, sauce, cheese, meat, veg and toppings on your dream pie.</p>  
+            </div>
          </div>
       </div>
-   <div class="right">
-      <h3>Custom Pizza</h3>
-      <p>Choose your own crust, sauce, cheese, meat, veg and toppings on your dream pie.</p>  
-   </div>
-</div>
-</div>
-
-
-<div class="main-container" id="block">
-   <h1>Chef's Whimsey</h1>   
-
-   <!-- single selection -->
-   <div class="menu-choice">
-      <div class="left" id="left-swap">
-         <div class="item-img">
-            <img src="menu-pizza.png" alt="Pizza Photo">
-         </div>
+      <!-- toggle options list -->
+         <div class="main-container" id="gradient">
+             <h2>View Our Custom Options</h2>
+            <!-- toogled options -->
+            <div class="toggle"  onclick="toggleOpenSize()">
+                  <!-- toggled content -->
+                  <div class="tog-head"><h3>Size</h3></div>
+                  <div id="tog-size">
+                     <p>Snack (6")</p>
+                     <p>Regular (11")</p>
+                     <p>Large (14")</p>
+                  </div>
+            </div>
+            <div class="toggle"  onclick="toggleOpenCrust()">
+            <div class="tog-head"><h3>Crust</h3></div>
+               <div id="tog-crust">
+               <p>Traditional Crust</p>
+               <p>Cauliflower Crust<br><em>*Cauliflower crust not available in 6” size</em></p>
+               <p>No Crust<br><em>*Toppings severed over cauliflower rice in a bowl</em></p>
+               </div>
+            </div>
+            <div class="toggle"  onclick="toggleOpenSauce()">
+               <!-- toggled content -->
+               <div class="tog-head"><h3>Sauce</h3></div>
+               <div id="tog-sauce">
+                  <p>Traditional Red Sauce</p>
+                  <p>Spicy Red Sauce</p>
+                  <p>Mornay Sauce<br><em>*Traditional white sauce with assorted cheese</em></p>
+                  <p>Housemade Cheese Whiz<br><em>*Traditional white sauce with cheddar cheese</em></p>
+                  <p>BBQ Sauce</p>
+                  <p>Roasted Pineapple Habanero Sauce</p>
+                  <p>Nut-Free Pesto</p>
+                  <p>Organic Masala Sauce</p>
+               </div>
+            </div>
+            <div class="toggle"  onclick="toggleOpenCheese()">
+               <div class="tog-head"><h3>Cheese</h3></div>
+                  <div id="tog-cheese">
+                  <p>Shredded Mozzarella<br><em>*Sliced fresh mozzarella</em></p>
+                  <p>Provolone</p>
+                  <p>Ricotta</p>
+                  <p>Smoked Gouda</p>
+                  <p>Gorgonzola</p>
+                  <p>Provolone</p>
+                  <p>Cheddar</p>
+                  <p>Local Goat Cheese</p>
+                  <p>Feta</p>
+                  <p>Shaved Blended Italian Cheeses<br><em>*Parmesan, Asiago and Pecorino Romano</em></p>
+                  <p>Vegan Mozzarella Style Cheese</p>
+                  <p>Paneer<br><em>*Does NOT melt</em></p>
+                  </div>
+            </div>
+            <div class="toggle"  onclick="toggleOpenVeg()">
+               <div class="tog-head"><h3>Vegetables</h3></div>
+                  <div id="tog-veggie">
+                  <p>Shredded Mozzarella<br><em>*Sliced fresh mozzarella</em></p>
+                  <p>Steamed Fresh Broccoli</p>
+                  <p>Vidalia Sweet Onions</p>
+                  <p>Fresh Red Onions</p>
+                  <p>Pickled Red Onions</p>
+                  <p>Caramelized Onions</p>
+                  <p>Chopped Garlic<br><em>*In Extra Virgin Olive Oil</em></p>
+                  <p>Roasted Garlic</p>
+                  <p>Green Peppers</p>
+                  <p>Black Olives</p>
+                  <p>Kalamata Olives</p>
+                  <p>Jalapenos<br><em>*Fresh or Pickled</em></p>
+                  <p>Banana Peppers<br><em>*Pickled</em></p>
+                  <p>Sweet Peppers<br><em>*Pickled</em></p>
+                  <p>Spicy Maple Bourbon Pickle Slices<br><em>*Made with real maple syrup and Maker’s Mark</em></p>
+                  <p>Sliced White Mushrooms</p>
+                  <p>Garlic and Herb Sauteed Mixed Mushrooms</p>
+                  <p>Sauteed Mixed Mushroom Finished with Marsala Wine</p>
+                  <p>Falafel</p>
+                  <p>Roasted Corn</p>
+                  <p>Grape Tomatoes</p>
+                  <p>Tomato Slices</p>
+                  <p>Marzano Tomatoes</p>
+                  <p>Fried Eggplant<br><em>*Contains Egg and Gluten</em></p>
+                  <p>Roasted Eggplant<br><em>*Vegan</em></p>
+                  <p>Artichoke Heart</p>
+                  <p>Sauteed Spinach with Garlic</p>
+                  <p>Raw Spinach<br><em>*Mix-In for Salad or Finishing Touch After Cooking for Pizza or Bowl</em></p>
+                  <p>Fresh Arugula<br><em>*Mix-In for Salad or Finishing Touch After Cooking for Pizza or Bowl</em></p>
+                  <p>Fresh Basil</p>
+                  <p>Macaroni and Five Cheeses</p>
+                  <p>Firm Tofu</p>
+                  </div>
+            </div>
+            <div class="toggle"  onclick="toggleOpenMeat()">
+               <div class="tog-head"><h3>Protein</h3></div>
+                  <div id="tog-meat">
+                     <p>Grilled Steak<br><em>*Natural, No Hormone, No Antibiotic Beef</em></p>
+                     <p>Boar’s Head Black Forest Ham</p>
+                     <p>Italian Sausage<br><em>*Farm-Raised,  Natural, No Hormone, No Antibiotic</em></p>
+                     <p>Juarez Style Carnitas<br><em>*Farm-Raised,  Natural, No Hormone, No Antibiotic</em></p>
+                     <p>Memphis Style BBQ Pulled Pork <br><em>*Farm-Raised,  Natural, No Hormone, No Antibiotic</em></p>
+                     <p>Meatballs<br><em>*Natural, No Hormone, No Antibiotic Beef</em></p>
+                     <p>Grilled Chicken<br><em>*Natural, No Hormone, No Antibiotic</em></p>
+                     <p>Buffalo Chicken<br><em>*Natural, No Hormone, No Antibiotic</em></p>
+                     <p>Lightly Breaded Fried Chicken Breast<br><em>*Natural, No Hormone, No Antibiotic</em></p>
+                     <p>Prosciutto</p>
+                     <p>Bacon</p>
+                     <p>Pepperoni</p>
+                     <p>Escargots</p>
+            </div>
+            </div>
+            <div class="toggle"  onclick="toggleOpenSea()">
+               <div class="tog-head"><h3>Seafood - Exotic</h3></div>
+                  <div id="tog-sea">
+                     <p>Smoked Salmon</p>
+                     <p>Clams<br><em>*Chopped</em></p>
+                     <p>Fried Oysters</p>
+                     <p>Garlic Seared Scallops</p>
+                     <p>Popcorn Shrimp</p>
+                     <p>Garlic Grilled Shrimp<br><em>*Scampi Style</em></p>
+                     <p>Shrimp Fra Diavolo </p>
+                     <p>Seared Ahi Tuna</p>
+            </div>
+            </div>
+            <div class="toggle"  onclick="toggleOpenFinish()">
+               <div class="tog-head"><h3>Finishing Touches</h3></div>
+                  <div id="tog-fin">
+                     <p>Buffalo Sauce Drizzle</p>
+                     <p>Extra Virgin Olive Oil Drizzle</p>
+                     <p>Extra Virgin White Truffle Oil Drizzle</p>
+                     <p>Red-Chili-infused Extra Virgin Olive Oil</p>
+                     <p>No-Nut Pesto Drizzle</p>
+                     <p>Balsamic Drizzle</p>
+                     <p>Roasted Pineapple Habanero Drizzle</p>
+                     <p>Crema Drizzle</p>
+                     <p>Housemade Ranch Dressing Drizzle</p>
+                     <p>Housemade Gorgonzola Dressing Drizzle</p>
+                     <p>Tzatzki Drizzle</p>
+                     <p>Sea Salt Sprinkle</p>
+                     <p>Freshly Cracked Pepper</p>  
+            </div>
+            </div>
+            <!-- toogled options END -->
       </div>
-      <div class="right">
-         <h3>Napoli</h3>
-         <p>Traditional margherita pizza topped with marzano tomatoes, fresh mozzarella and fresh basil.</p>  
-      </div>
-   </div><br>
-   <!-- single selection END -->
-   
+       <!-- toggle options list END -->
+         <!-- build your own pizza END -->
+
+
+
+      <div class="main-container" id="block">
+         <h1>Chef's Whimsey</h1>   
+
+      <!-- NOTE FOR FUTURE CHANGES<br><em>*to add a new item to the menu copy the 
+         "single selection" tag from the frist tag to the END tag -
+         to remove a menu item find the realvent "<h3>" and delete the 
+         "single selection" tag from the frist tag to the END tag  -->
+
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
+            </div>
+         </div>
+         <div class="right">
+            <h3>Napoli</h3>
+            <p>Traditional margherita pizza topped with marzano tomatoes, fresh mozzarella and fresh basil.</p>  
+         </div>
+      </div><br>
+
+      <!-- single selection END -->
+   
+      <!-- single selection -->
+      <div class="menu-choice" onclick="openPopup()">
+         <div class="left" id="left-swap">
+            <div class="item-img">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
             <h3>Providence</h3>
-            <p>Red Sauce, Mozzarella, Chopped Clams, Bacon, Green Peppers and Onions.</p>          </div>
+            <p>Red Sauce, Mozzarella, Chopped Clams, Bacon, Green Peppers and Onions.</p>
+         </div>
       </div><br>
       <!-- single selection END -->
 
-         <!-- single selection -->
-   <div class="menu-choice">
-      <div class="left">
-         <div class="item-img">
-            <img src="menu-pizza.png" alt="Pizza Photo">
+      <!-- single selection -->
+      <div class="menu-choice" onclick="openPopup()">
+         <div class="left">
+            <div class="item-img">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
+            </div>
          </div>
-      </div>
-      <div class="right">
-         <h3>Beverly Hills</h3>
-         <p>Smoked Salmon, Garlic Dill Crème Fraiche andRed-Chili-infused Extra Virgin Olive Oil.</p>  
-      </div>
-   </div><br>
-   <!-- single selection END -->
+         <div class="right">
+            <h3>Beverly Hills</h3>
+            <p>Smoked Salmon, Garlic Dill Crème Fraiche and Red-Chili-infused Extra Virgin Olive Oil.</p>  
+         </div>
+      </div><br>
+      <!-- single selection END -->
 
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -134,10 +303,10 @@
       <!-- single selection END -->
 
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -148,10 +317,10 @@
       <!-- single selection END -->
 
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -162,10 +331,10 @@
       <!-- single selection END -->
 
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -176,10 +345,10 @@
       <!-- single selection END -->
 
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -190,10 +359,10 @@
       <!-- single selection END -->
 
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -204,10 +373,10 @@
       <!-- single selection END -->
 
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -218,10 +387,10 @@
       <!-- single selection END -->
 
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -230,11 +399,12 @@
          </div>
       </div><br>
       <!-- single selection END -->
+
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -245,10 +415,10 @@
       <!-- single selection END -->
 
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -259,10 +429,10 @@
       <!-- single selection END -->
 
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -272,12 +442,11 @@
       </div><br>
       <!-- single selection END -->
 
-
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -287,12 +456,11 @@
       </div><br>
       <!-- single selection END -->
 
-
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -303,10 +471,10 @@
       <!-- single selection END -->
 
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -317,10 +485,10 @@
       <!-- single selection END -->
 
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -330,11 +498,11 @@
       </div><br>
       <!-- single selection END -->
 
-                  <!-- single selection -->
-      <div class="menu-choice">
+      <!-- single selection -->
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -344,12 +512,11 @@
       </div><br>
       <!-- single selection END -->
 
-
       <!-- single selection -->
-      <div class="menu-choice">
+      <div class="menu-choice" onclick="openPopup()">
          <div class="left" id="left-swap">
             <div class="item-img">
-               <img src="menu-pizza.png" alt="Pizza Photo">
+               <img src="assets/menu-pizza.png" alt="Pizza Photo">
             </div>
          </div>
          <div class="right">
@@ -360,37 +527,41 @@
       <!-- single selection END -->
 
 
-</div>
-
-
-<!-- Menu Na Bottom -->
-<div id="menu-nav">
-   <div class="nav-item" id="active-item">
-      <a href="menu.html"><p>Pizzas</p></a>
-   </div>
-   <div class="nav-item">
-      <a href="menu-salads.html"><p>Salads</p></a>
-   </div>
+   <!-- Menu Nav Bottom -->
+   <div class="menu-nav" id="bottom-nav">
+      <div class="nav-item" id="active-item">
+         <a href="menu.html"><p>Pizzas</p></a>
+      </div>
       <div class="nav-item">
-   <a href="menu-bowls.html"><p>Bowls</p></a>  
-   </div>
+         <a href="menu-salads.html"><p>Salads</p></a>
+      </div>
+         <div class="nav-item">
+      <a href="menu-bowls.html"><p>Bowls</p></a>  
+      </div>
+         <div class="nav-item">
+         <a href="menu-drinks.html"><p>Drinks</p></a>   
+      </div>
       <div class="nav-item">
-      <a href="menu-drinks.html"><p>Drinks</p></a>   
+         <a href="menu-desserts.html"><p>Desserts</p></a>
+      </div>
    </div>
-   <div class="nav-item">
-      <a href="menu-desserts.html"><p>Desserts</p></a>
-   </div>
+   <!-- Menu Nav Bottom END -->
+
 </div>
-<!-- Menu Nav Bottom END -->
+<!-- Pizza Menu Items END -->
 
 
-<!-- Social Nav -->
-<div class="soc-nav">
-<a href=""><img src="facebook.svg" alt="Facebook Icon"></a>
-<a href=""><img src="twitter.svg" alt="Twitter Icon"></a>
-<a href=""><img src="insta.svg" alt="Instagram Icon"></a>
-</div>
-<!-- Social Nav END -->
-</body>
-<source>
+   <!-- Social Nav -->
+   <div class="soc-nav">
+      <a href=""><img src="assets/facebook.svg" alt="Facebook Icon"></a>
+      <a href=""><img src="assets/twitter.svg" alt="Twitter Icon"></a>
+      <a href=""><img src="assets/insta.svg" alt="Instagram Icon"></a>
+   </div>
+   <!-- Social Nav END -->
+
+
+
+   </body>
+   <!-- Eta Javascript -->
+   <script src="eta.js"></script>
 </html>
